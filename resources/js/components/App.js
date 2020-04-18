@@ -3,16 +3,20 @@ import ReactDOM from 'react-dom';
 import FetchProducts from './FetchProducts';
 import LoginAPI from './LoginAPI'
 import FetchPersonAPI from './FetchPersonAPI';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class App extends Component {
 
     render(){
     return (
         <div className="container">
-            <FetchPersonAPI />
+            <Router>
+    
+                <Route path="/personscreate" component = {FetchPersonAPI} />
+                <Route path="/seeproducts" component = {FetchProducts} />
 
-            <FetchProducts />
-            <LoginAPI />
+                <LoginAPI />
+            </Router>
         </div>
         );
     }

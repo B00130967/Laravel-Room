@@ -17,6 +17,7 @@ public function up()
         $table->text('description');
         $table->integer('price');
         $table->boolean('availability');
+        $table->string('src');
     });
 }
  
