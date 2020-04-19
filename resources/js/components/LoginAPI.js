@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 import BestMovies from './FetchPersonAPI'
 import DinosFav from './FetchProducts'
 
-import Stress from './Stress'
+import Stress from './Register'
 
 export default class LoginAPI extends Component {
 

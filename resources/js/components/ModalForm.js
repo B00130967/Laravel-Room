@@ -19,29 +19,7 @@ class ModalForm extends React.Component {
     });
   }
 
-  submit()
-    {
-        console.log(this.state)
-        fetch('http://localhost:8000/api/login', {
-            method: 'post',
-            body: JSON.stringify(
-                this.state
-            ),
-            headers: {
-                'Accept' : 'application/json',
-                'Content-Type' : 'application/json'
-            }
-            
-            })
-            .then(function(response){
-                response.json()
-                    .then(function(resp){
-                        console.log(resp)
-                    }
-                )
-            })
-    }
-
+ 
   render() {
     return (
       <div>
@@ -53,11 +31,6 @@ class ModalForm extends React.Component {
            <UploadNewRoom />
 
           </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={()=>{this.submit()}}> Host Room </Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-          </ModalFooter>
-        
         </Modal>
       </div>
     );

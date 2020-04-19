@@ -1,0 +1,37 @@
+.blog-content{  width: 250;
+                height: 230px;
+                object-fit: cover;
+                }
+.top-right{position: absolute;
+top: 8px;
+right: 16px;
+color:white;
+font-weight:bold;
+font-size:larger;
+text-shadow: 1.5px 1.5px  black;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    font-weight:bold;
+    font-size:1.5rem;
+    text-shadow: 2px 2px  black;
+  }
+.centered:hover{display:none}
+
+.bar-green{ height: 18px; background-color: rgb(17, 240, 25);}
+.bar-orange{ height: 18px; background-color: rgb(240, 188, 17);}
+.bar-red{ height: 18px; background-color: rgb(240, 17, 17);}
+
+
+.bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+  }
+
+button:focus {outline:0;}

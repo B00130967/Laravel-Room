@@ -10,7 +10,7 @@ class UploadNewRoom extends React.Component{
             title:"",
             description: "",
             price: "",
-            availability: "",
+            availability: "false",
             src: ""
         }
     }
@@ -18,7 +18,7 @@ class UploadNewRoom extends React.Component{
     submit()
     {
         console.log(this.state)
-        fetch('http://localhost:8000/api/login', {
+        fetch('http://localhost:8000/api/products', {
             method: 'post',
             body: JSON.stringify(
                 this.state
@@ -56,7 +56,7 @@ class UploadNewRoom extends React.Component{
 
                 <FormGroup>
                     <Label for="exampleDescription">Description</Label>
-                    <Input type="textarea" name="password" id="exampleDescription" placeholder="password placeholder" onChange={(item)=>{this.setState({descrption:item.target.value})}}/>
+                    <Input type="text" name="password" id="exampleDescription" placeholder="password placeholder" onChange={(item)=>{this.setState({description:item.target.value})}}/>
                 </FormGroup>
 
                 <FormGroup>
@@ -70,7 +70,7 @@ class UploadNewRoom extends React.Component{
 
                 <FormGroup check>
                     <Label check>
-                    <Input type="checkbox" onChange={(item)=>{this.setState({availability:item.target.value})}}/>
+                    <Input type="checkbox" onChange={(item)=>{this.setState({availability:!this.state.availability})}}/>
                     Check me out
                     </Label>
                 </FormGroup>
@@ -78,7 +78,7 @@ class UploadNewRoom extends React.Component{
                                              
                         
                         
-                <button onClick={()=>{this.submit()}}> Host Room </button>
+                <Button className="mt-1" color="primary" size="lg" block onClick={()=>{this.submit()}}> Host Room </Button>
         
                 </div>
                 </div>

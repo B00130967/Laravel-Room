@@ -1,0 +1,66 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin:0;
+}
+
+.full-screen-background{
+    /* The image used */
+    background-image: url("../img/berlin-fulllsc.jpg");
+
+    /* Full height */
+    height: 100vh;
+    width: auto;
+    margin:0;
+
+
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.header-startpage{
+    padding-top: 10rem; 
+    top:20%;
+    text-align:center;
+    color:white;
+    font-family: 'Dosis', serif;
+    font-size: 48px;
+    text-shadow: 2px 2px black;
+}
+
+.login-box{
+    background-color: rgb(243, 243, 243);
+    width: 400px; 
+    height: 280px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 1px rgb(56, 56, 56);
+    padding:1rem;  
+    border-radius:3px
+  }
+.input-icons i { 
+    position: absolute; 
+} 
+  
+.input-icons { 
+    width: 100%; 
+    margin-bottom: 8px; 
+} 
+  
+.icon { 
+    padding: 1rem; 
+    color:blue ; 
+    min-width: 50px; 
+    text-align: center; 
+} 
+  
+.input-field { 
+    width: 100%; 
+    padding: 10px; 
+    text-align: center; 
+} 
