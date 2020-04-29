@@ -10,7 +10,23 @@ import {BrowserRouter as Router, Switch, Link, Route,NavLink } from 'react-route
 export default class Startpage extends Component{
 
 
+
+    state = {username:'', password:'', isChecked: false}
+    
+    handleForSubmit(){
+        event.preventDefault(); 
+        console.log(this.state.username, this.state.password)
+
+    }
+
+    handleChecked(){
+        this.setState({isChecked: !this.state.isChecked})
+    }
+
     render(){
+        
+        const {username, password, isChecked} = this.state
+
         return(
    
             
@@ -24,7 +40,10 @@ export default class Startpage extends Component{
                         </i> 
                             <input className="input-field" 
                                 type="text" 
-                                placeholder="Username"/> 
+                                placeholder="Username" 
+                                value={username}
+                                onChange = { event => this.setState({username: event.target.value})}
+                            />
                         </div> 
             
                         <div className="input-icons"> 
@@ -32,8 +51,15 @@ export default class Startpage extends Component{
                         </i> 
                             <input className="input-field" 
                                 type="password"
-                                placeholder="Password" /> 
+                                placeholder="Password" 
+                                value={password}
+                                onChange = { event => this.setState({password: event.target.value})}
+                                /> 
                         </div> 
+                        <input type="checkbox" id="remember"
+                        checked = {isChecked}
+                        onChange={()=> this.handleChecked} />
+                        <label onClick={()=> this.handleChecked()}>Remember me </label>
 
      
                         <Link to="/Mainpage"> <button type="submit" className="btn btn-primary btn-lg btn-block">Login </button></Link>

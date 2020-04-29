@@ -84724,6 +84724,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -84738,14 +84740,47 @@ var Startpage = /*#__PURE__*/function (_Component) {
   var _super = _createSuper(Startpage);
 
   function Startpage() {
+    var _this;
+
     _classCallCheck(this, Startpage);
 
-    return _super.apply(this, arguments);
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      username: '',
+      password: '',
+      isChecked: false
+    });
+
+    return _this;
   }
 
   _createClass(Startpage, [{
+    key: "handleForSubmit",
+    value: function handleForSubmit() {
+      event.preventDefault();
+      console.log(this.state.username, this.state.password);
+    }
+  }, {
+    key: "handleChecked",
+    value: function handleChecked() {
+      this.setState({
+        isChecked: !this.state.isChecked
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
+      var _this$state = this.state,
+          username = _this$state.username,
+          password = _this$state.password,
+          isChecked = _this$state.isChecked;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "full-screen-background"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
@@ -84759,7 +84794,13 @@ var Startpage = /*#__PURE__*/function (_Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "input-field",
         type: "text",
-        placeholder: "Username"
+        placeholder: "Username",
+        value: username,
+        onChange: function onChange(event) {
+          return _this2.setState({
+            username: event.target.value
+          });
+        }
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input-icons"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -84767,8 +84808,25 @@ var Startpage = /*#__PURE__*/function (_Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "input-field",
         type: "password",
-        placeholder: "Password"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+        placeholder: "Password",
+        value: password,
+        onChange: function onChange(event) {
+          return _this2.setState({
+            password: event.target.value
+          });
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        id: "remember",
+        checked: isChecked,
+        onChange: function onChange() {
+          return _this2.handleChecked;
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        onClick: function onClick() {
+          return _this2.handleChecked();
+        }
+      }, "Remember me "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
         to: "/Mainpage"
       }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
