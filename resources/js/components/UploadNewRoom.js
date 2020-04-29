@@ -1,8 +1,10 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import axios from 'axios'
 
 
 class UploadNewRoom extends React.Component{
+
 
     constructor(props){
         super(props);
@@ -10,11 +12,31 @@ class UploadNewRoom extends React.Component{
             title:"",
             description: "",
             price: "",
-            availability: "false",
-            src: ""
+            image: null
         }
     }
 
+   
+
+    fileSelectedHandler = event => {
+      this.setState({ image : event.target.files[0] })
+    }
+    
+    uploadHandler = () => {
+        let settings = { headers: { 'content-type': 'multipart/form-data' } }
+        const fd = new FormData()
+        fd.append('title',this.state.title)
+        fd.append('description',this.state.description)
+        fd.append('price',this.state.price)
+        fd.append('image', this.state.image, this.state.image.name);
+        axios.post('http://localhost:8000/api/products', fd, settings)
+        .then(res=> {
+            console.log(res);
+        })
+        console.log(this.state.image)
+    }
+
+ 
     submit()
     {
         console.log(this.state)
@@ -22,13 +44,15 @@ class UploadNewRoom extends React.Component{
             method: 'post',
             body: JSON.stringify(
                 this.state
-            ),
+            )
+,
             headers: {
                 'Accept' : 'application/json',
                 'Content-Type' : 'application/json'
             }
             
             })
+            .then(console.log(body))
             .then(function(response){
                 response.json()
                     .then(function(resp){
@@ -61,7 +85,7 @@ class UploadNewRoom extends React.Component{
 
                 <FormGroup>
                     <Label for="exampleFile">File</Label>
-                    <Input type="file" name="file" id="exampleFile" onChange={(item)=>{this.setState({src:item.target.value})}}/>
+                    <input type="file"  onChange={this.fileSelectedHandler}/>
                     <FormText color="muted">
                     This is some placeholder block-level help text for the above input.
                     It's a bit lighter and easily wraps to a new line.
@@ -77,7 +101,7 @@ class UploadNewRoom extends React.Component{
 
                                              
                         
-                        
+                <Button onClick={this.uploadHandler}>Image Upload</Button>
                 <Button className="mt-1" color="primary" size="lg" block onClick={()=>{this.submit()}}> Host Room </Button>
         
                 </div>

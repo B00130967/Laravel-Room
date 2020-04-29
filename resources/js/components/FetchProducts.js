@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 
-class FetchPersonAPI extends React.Component{
+class FetchProducts extends React.Component{
 
         state  = {
             loading:true,
-            person:null
         }
+        
     
         async componentDidMount(){
             const url='http://localhost:8000/api/products'
             const response = await fetch(url);
             const data = await response.json(); 
-            this.setState({ products: data ,loading:false});  
+            this.setState({ products: data 
+                            ,loading:false});  
             
         }
         
@@ -26,14 +27,15 @@ class FetchPersonAPI extends React.Component{
             return(
                 <div>
                     <div>
-                        HEyHo {this.state.products[10].price}
                     </div>
                     <ul>
                     <li>{this.state.products.map(product=> <div>{product.title}{product.price}</div>)}</li>
+                    <li>{this.state.products.map(product=> <img src={product.image}/>)}</li>
+                    
                     </ul>
                 </div>
             );
         }
     }
 
-export default FetchPersonAPI
+export default FetchProducts

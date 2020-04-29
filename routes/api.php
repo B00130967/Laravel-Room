@@ -17,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/test', function () {
-   return ['name' => ' GG'];
-});
+
 
 Route::get('products', 'ProductsController@index');
  
@@ -32,3 +30,5 @@ Route::put('products/{product}','ProductsController@update');
 Route::delete('products/{product}', 'ProductsController@delete');
 
 Route::post('login', 'PostsController@login');
+
+Route::resource('fileupload', 'FileuploadController');

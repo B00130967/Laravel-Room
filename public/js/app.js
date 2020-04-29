@@ -83979,15 +83979,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var FetchPersonAPI = /*#__PURE__*/function (_React$Component) {
-  _inherits(FetchPersonAPI, _React$Component);
+var FetchProducts = /*#__PURE__*/function (_React$Component) {
+  _inherits(FetchProducts, _React$Component);
 
-  var _super = _createSuper(FetchPersonAPI);
+  var _super = _createSuper(FetchProducts);
 
-  function FetchPersonAPI() {
+  function FetchProducts() {
     var _this;
 
-    _classCallCheck(this, FetchPersonAPI);
+    _classCallCheck(this, FetchProducts);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -83996,14 +83996,13 @@ var FetchPersonAPI = /*#__PURE__*/function (_React$Component) {
     _this = _super.call.apply(_super, [this].concat(args));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      loading: true,
-      person: null
+      loading: true
     });
 
     return _this;
   }
 
-  _createClass(FetchPersonAPI, [{
+  _createClass(FetchProducts, [{
     key: "componentDidMount",
     value: function () {
       var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -84054,16 +84053,20 @@ var FetchPersonAPI = /*#__PURE__*/function (_React$Component) {
       }
 
       var elements = this.state.products;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "HEyHo ", this.state.products[10].price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, this.state.products.map(function (product) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, this.state.products.map(function (product) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, product.title, product.price);
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, this.state.products.map(function (product) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: product.image
+        });
       }))));
     }
   }]);
 
-  return FetchPersonAPI;
+  return FetchProducts;
 }(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (FetchPersonAPI);
+/* harmony default export */ __webpack_exports__["default"] = (FetchProducts);
 
 /***/ }),
 
@@ -84520,11 +84523,11 @@ var Navigation = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
-        path: "/mainpage",
+        path: "/Mainpage",
         component: _Mainpage__WEBPACK_IMPORTED_MODULE_2__["default"],
         exact: true
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
-        path: "/register",
+        path: "/Register",
         component: _Register__WEBPACK_IMPORTED_MODULE_4__["default"],
         exact: true
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
@@ -84554,6 +84557,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Register; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -84578,6 +84582,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Register = /*#__PURE__*/function (_Component) {
   _inherits(Register, _Component);
 
@@ -84589,18 +84594,85 @@ var Register = /*#__PURE__*/function (_Component) {
     _classCallCheck(this, Register);
 
     _this = _super.call(this, props);
-    _this.state = {
-      'book': "Chill out yore base by ChillerXXX",
-      'yoga': 'This is the best yoga fun ever',
-      'gym': 'Acces the state'
-    };
+    _this.state = {};
     return _this;
   }
 
   _createClass(Register, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "This is stress but you can reduce it by ", this.state.book, "This is the best way ever ", this.state.yoga);
+      var _this2 = this;
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "full-screen-background"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "header-startpage"
+      }, "Explore Berlin - Rent your Student Room"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "registration-box "
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+        "for": "Name"
+      }, "Name: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+        type: "text",
+        name: "Name",
+        id: "userName",
+        placeholder: "Please enter youre Name",
+        onChange: function onChange(item) {
+          _this2.setState({
+            Name: item.target.value
+          });
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+        "for": "Email"
+      }, "Email: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+        type: "email",
+        name: "Email",
+        id: "userEmail",
+        placeholder: "Please enter a valid Email ",
+        onChange: function onChange(item) {
+          _this2.setState({
+            price: item.target.value
+          });
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+        "for": "Password"
+      }, "Password: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+        type: "password",
+        name: "password",
+        id: "exampleDescription",
+        placeholder: "password placeholder",
+        onChange: function onChange(item) {
+          _this2.setState({
+            description: item.target.value
+          });
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+        "for": "exampleFile"
+      }, "File"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+        type: "file",
+        name: "file",
+        id: "exampleFile",
+        onChange: function onChange(item) {
+          _this2.setState({
+            src: item.target.value
+          });
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormText"], {
+        color: "muted"
+      }, "This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+        check: true
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+        check: true
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+        type: "checkbox",
+        onChange: function onChange(item) {
+          _this2.setState({
+            availability: !_this2.state.availability
+          });
+        }
+      }), "Check me out")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
+        className: "btn btn-primary btn-lg btn-block"
+      }, "Register")));
     }
   }]);
 
@@ -84696,10 +84768,14 @@ var Startpage = /*#__PURE__*/function (_Component) {
         className: "input-field",
         type: "password",
         placeholder: "Password"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+        to: "/Mainpage"
+      }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-primary btn-lg btn-block"
-      }, "Login ")));
+      }, "Login ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+        to: "/Register"
+      }, "Register")));
     }
   }]);
 
@@ -84722,6 +84798,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -84744,6 +84822,9 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -84758,12 +84839,35 @@ var UploadNewRoom = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, UploadNewRoom);
 
     _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "fileSelectedHandler", function (event) {
+      _this.setState({
+        image: event.target.files[0]
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "uploadHandler", function () {
+      var settings = {
+        headers: {
+          'content-type': 'multipart/form-data'
+        }
+      };
+      var fd = new FormData();
+      fd.append('title', _this.state.title);
+      fd.append('description', _this.state.description);
+      fd.append('price', _this.state.price);
+      fd.append('image', _this.state.image, _this.state.image.name);
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('http://localhost:8000/api/products', fd, settings).then(function (res) {
+        console.log(res);
+      });
+      console.log(_this.state.image);
+    });
+
     _this.state = {
       title: "",
       description: "",
       price: "",
-      availability: "false",
-      src: ""
+      image: null
     };
     return _this;
   }
@@ -84779,7 +84883,7 @@ var UploadNewRoom = /*#__PURE__*/function (_React$Component) {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         }
-      }).then(function (response) {
+      }).then(console.log(body)).then(function (response) {
         response.json().then(function (resp) {
           console.log(resp);
         });
@@ -84834,15 +84938,9 @@ var UploadNewRoom = /*#__PURE__*/function (_React$Component) {
         }
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
         "for": "exampleFile"
-      }, "File"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+      }, "File"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
-        name: "file",
-        id: "exampleFile",
-        onChange: function onChange(item) {
-          _this2.setState({
-            src: item.target.value
-          });
-        }
+        onChange: this.fileSelectedHandler
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormText"], {
         color: "muted"
       }, "This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
@@ -84857,6 +84955,8 @@ var UploadNewRoom = /*#__PURE__*/function (_React$Component) {
           });
         }
       }), "Check me out")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        onClick: this.uploadHandler
+      }, "Image Upload"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         className: "mt-1",
         color: "primary",
         size: "lg",

@@ -13,7 +13,7 @@ export default class Startpage extends Component{
     render(){
         return(
    
-
+            
             <div className="full-screen-background">
                 <h5 className="header-startpage">Explore Berlin - Rent your Student Room</h5>
                 <div className="login-box ">
@@ -34,7 +34,11 @@ export default class Startpage extends Component{
                                 type="password"
                                 placeholder="Password" /> 
                         </div> 
-                        <button type="submit" className="btn btn-primary btn-lg btn-block">Login </button>
+
+     
+                        <Link to="/Mainpage"> <button type="submit" className="btn btn-primary btn-lg btn-block">Login </button></Link>
+                        <Link to="/Register">Register</Link>
+
 
                 </div>
             </div>
